@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import dbEnvConfig, { dbConfig } from 'src/core/db.config';
+import { UsersController } from '../users/users.controller';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -24,7 +25,7 @@ import { AppService } from './app.service';
       synchronize: true,
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, UsersController],
   providers: [AppService],
 })
 export class AppModule {}
