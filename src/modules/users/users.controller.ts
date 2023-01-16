@@ -15,7 +15,6 @@ import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-  // TODO: replace to IUsersService
   constructor(private readonly usersService: UsersService) {}
 
   //   @Get('/user')
