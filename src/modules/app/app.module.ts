@@ -2,8 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import dbEnvConfig from 'src/core/db.config';
-import { UsersController } from '../users/users.controller';
-import { UsersService } from '../users/users.service';
+import { UsersModule } from '../users/users.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -26,8 +25,9 @@ import { AppService } from './app.service';
       logging: true,
       synchronize: true,
     }),
+    UsersModule,
   ],
-  controllers: [AppController, UsersController],
-  providers: [AppService, UsersService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
